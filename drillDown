@@ -1,10 +1,36 @@
-$("<button id='myBtn'>Open Modal</button>").appendTo("body");
+Qualtrics.SurveyEngine.addOnload(function()
+{
+	
+	$(".modal").css(
+		{"display": "none",
+   "position": "fixed",
+   "z-index": "1",
+   "left": "0",
+   "top": "0",
+   "width": "100%",
+   "height": "100%",
+   "overflow": "auto",
+   "background-color": "rgb(0, 0, 0),
+	"background-color": "rgba(0, 0, 0, 0.4)"
+		};
+)
+	$(".modal-content").css(
+		{
+			"background-color": "#fefefe"
+   			"margin": "15% auto",
+  			"padding": "20px",
+   			"border": "1px solid #888",
+   			"width": "80%"
+		};
+	)
+	
+	$("<button id='myBtn'>Open Modal</button>").appendTo("body");
 $("<div id='myModal' class='modal'><div class='modal-content'><p>Did someone pick up?</p><button id='pickup'>Yes, someone picked up</button><button id='noPickup'>No, nobody picked up</button></div></div>").appendTo("body");
       
 $("<div id='pickupModal' class='modal'><div class='modal-content'><ul style='list-style:none;'><li><button class='pickupClass' id='hardRefuse' >Hard refusal</button></li><li><button class='pickupClass' id='softRefuse'>Soft refusal</button></li><li><button class='pickupClass' id='appointment'>Schedule an appointment</button></li><li><button id='back'>Back</button></li></ul></div></div>").appendTo("body");
 
 $("<div id='noPickupModal' class='modal'><div class='modal-content'><ul style='list-style:none;'><li><button class='noPickupClass' id='answeringMachine' >Answering Machine</button></li><li><button class='noPickupClass' id='HHconfAM'>House Hold Confirmed AM</button></li><li><button class='noPickupClass' id='noAnswer'>No Answer</button></li><li><button class='noPickupClass' id='telecomBarrier' >Telecommunications Barrier</button></li><li><button class='noPickupClass' id='techBarrier' >Technological Barrier</button></li><li><button id='possNonworking' >Possible Nonworking</button></li><li><button class='noPickupClass' id='nwnDisco'>Nonworking Number/Disconnected</button></li><li><button id='back2'>Back</button></li></ul></div></div>").appendTo("body");
-
+	
 // Get the modals
 var modal = document.getElementById('myModal');
 var pickupModal = document.getElementById('pickupModal');
@@ -56,4 +82,6 @@ $(".pickupClass").click(function(){
 // When the user clicks on a button with the pickup class, fire a new URL
 $(".noPickupClass").click(function(){
   window.open("http://www.wikipedia.org")
+});
+
 });
