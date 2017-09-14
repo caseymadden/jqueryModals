@@ -1,0 +1,59 @@
+$("<button id='myBtn'>Open Modal</button>").appendTo("body");
+$("<div id='myModal' class='modal'><div class='modal-content'><p>Did someone pick up?</p><button id='pickup'>Yes, someone picked up</button><button id='noPickup'>No, nobody picked up</button></div></div>").appendTo("body");
+      
+$("<div id='pickupModal' class='modal'><div class='modal-content'><ul style='list-style:none;'><li><button class='pickupClass' id='hardRefuse' >Hard refusal</button></li><li><button class='pickupClass' id='softRefuse'>Soft refusal</button></li><li><button class='pickupClass' id='appointment'>Schedule an appointment</button></li><li><button id='back'>Back</button></li></ul></div></div>").appendTo("body");
+
+$("<div id='noPickupModal' class='modal'><div class='modal-content'><ul style='list-style:none;'><li><button class='noPickupClass' id='answeringMachine' >Answering Machine</button></li><li><button class='noPickupClass' id='HHconfAM'>House Hold Confirmed AM</button></li><li><button class='noPickupClass' id='noAnswer'>No Answer</button></li><li><button class='noPickupClass' id='telecomBarrier' >Telecommunications Barrier</button></li><li><button class='noPickupClass' id='techBarrier' >Technological Barrier</button></li><li><button id='possNonworking' >Possible Nonworking</button></li><li><button class='noPickupClass' id='nwnDisco'>Nonworking Number/Disconnected</button></li><li><button id='back2'>Back</button></li></ul></div></div>").appendTo("body");
+
+// Get the modals
+var modal = document.getElementById('myModal');
+var pickupModal = document.getElementById('pickupModal');
+var noPickupModal = document.getElementById('noPickupModal');
+
+// Get the buttons
+var btn = document.getElementById("myBtn");
+// Get the button that opens the pickup modal
+var pickupBtn = document.getElementById("pickup");
+// Get the button that opens the no answer modal
+var noPickupBtn = document.getElementById("noPickup");
+// Get the back button
+var backBtn = document.getElementById("back");
+// Get the other back button
+var backBtn2 = document.getElementById("back2");
+
+//*****Make the buttons fire events*****
+// When the user clicks on the open modal button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  // When the user clicks on the pickup button, open a new modal
+pickupBtn.onclick = function() {
+    modal.style.display = "none";
+    pickupModal.style.display = "block";
+  }
+  // When the user clicks on the no pickup button, open a new modal
+noPickupBtn.onclick = function() {
+  modal.style.display = "none";
+  noPickupModal.style.display = "block";
+}
+
+// When the user clicks on the back button, return to previous modal
+backBtn.onclick = function() {
+  pickupModal.style.display = "none";
+  modal.style.display = "block";
+}
+backBtn2.onclick = function() {
+  noPickupModal.style.display = "none";
+  modal.style.display = "block";
+}
+
+// When the user clicks on a button with the pickup class, fire a new URL
+$(".pickupClass").click(function(){
+  window.open("http://www.google.com")
+});
+
+// When the user clicks a button with no pickup class, fire a new URL
+// When the user clicks on a button with the pickup class, fire a new URL
+$(".noPickupClass").click(function(){
+  window.open("http://www.wikipedia.org")
+});
