@@ -1,88 +1,118 @@
-Qualtrics.SurveyEngine.addOnload(function() {
-    $("<div id='myModal' class='modal'><div class='modal-content'><p>Did someone pick up?</p><button id='pickup'>Yes, someone picked up</button><button id='noPickup'>No, nobody picked up</button></div></div>").appendTo("body");
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Modal</button>
 
-    $("<div id='pickupModal' class='modal'><div class='modal-content'><ul style='list-style:none;'><li><button class='pickupClass' id='hardRefuse' >Hard refusal</button></li><li><button class='pickupClass' id='softRefuse'>Soft refusal</button></li><li><button class='pickupClass' id='appointment'>Schedule an appointment</button></li><li><button id='back'>Back</button></li></ul></div></div>").appendTo("body");
+<!-- Initial -->
+<div id="myModal" class="modal">
 
-    $("<div id='noPickupModal' class='modal'><div class='modal-content'><ul style='list-style:none;'><li><button class='noPickupClass' id='answeringMachine' >Answering Machine</button></li><li><button class='noPickupClass' id='HHconfAM'>House Hold Confirmed AM</button></li><li><button class='noPickupClass' id='noAnswer'>No Answer</button></li><li><button class='noPickupClass' id='telecomBarrier' >Telecommunications Barrier</button></li><li><button class='noPickupClass' id='techBarrier' >Technological Barrier</button></li><li><button id='possNonworking' >Possible Nonworking</button></li><li><button class='noPickupClass' id='nwnDisco'>Nonworking Number/Disconnected</button></li><li><button id='back2'>Back</button></li></ul></div></div>").appendTo("body");
+  <!-- Initial modal content -->
+  <div class="modal-content">
+    <p>
+      INTERVIEWER: You are now ready to answer questions to assign a disposition code. If you continue past this screen, you will select the outcome of this call attempt.
+    </p>
+    <ul style="list-style:none;">
+      <li>
+        <button id="supervisorAttention">Supervisor attention*</button>
+      </li>
+      <li>
+        <button id="scheduleAnAppointmentForCallback">Schedule an apppointment for callback</button>
+      </li>
+      <li>
+        <button id="scheduledAnInPersonInterview">Scheduled an in-person interview</button>
+      </li>
+      <li>
+        <button id="spokeWithAPerson">Spoke with a person</button>
+      </li>
+      <li>
+        <button id="didNotSpeakWithAPerson">Did not speak with a perseon</button>
+      </li>
+      <li>
+        <button id="receovedAlternateNumberForSP">Received alternate number for SP</button>
+      </li>
+      <li>
+        <button id="selectedPersonTransferedToANursingHome">Selected person transfered to a nursing home</button>
+      </li>
+      <li>
+        <button id="selectedPersonDead">Selected person dead</button>
+      </li>
+    </ul>
+  </div>
+</div>
 
-    $(".modal").css({
-        "display": "none",
-        "position": "fixed",
-        "z-index": "1",
-        "left": "0",
-        "top": "0",
-        "width": "100%",
-        "height": "100%",
-        "overflow": "auto",
-        "background-color": "rgb(0, 0, 0)",
-        "background-color": "rgba(0, 0, 0, 0.4)"
-    });
+<!-- Supervisor Attention -->
+<div id="supervisorAttentionModal" class="modal">
 
-    $(".modal-content").css({
-        "background-color": "#fefefe",
-        "margin": "15% auto",
-        "padding": "20px",
-        "border": "1px solid #888",
-        "width": "80%"
-    });
-	
-	$("button").css({
-		"width" : "350px"
-	});
+  <!-- Modal content -->
+  <div class="modal-content">
+    <p>Disposition code = 5700</p>
+    <p>SUPERVISOR ATTENTION</p>
+    <p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p>
+    <ul style="list-style:none;">
+      <li>
+        <button id="supervisorAttentionNext" onClick="window.open('http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5700')">Next</button>
+      </li>
+      <li>
+        <button id="back">Back</button>
+      </li>
+    </ul>
+  </div>
 
-    // Get the modals
-    var modal = document.getElementById('myModal');
-    var pickupModal = document.getElementById('pickupModal');
-    var noPickupModal = document.getElementById('noPickupModal');
+  <!-- Schedule an appointment for callback -->
+  <div id="scheduleAnAppointmentForCallbackModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <p>Is the appointment with the proxy, or the SP?</p>
+      <ul style="list-style:none;">
+        <li>
+          <li>
+            <button id="scheduleAnAppointmentForCallbackModalproxy">Proxy</button>
+          </li>
+          <li>
+            <button id="scheduleAnAppointmentForCallbackModalSP">SP</button>
+          </li>
+          <li>
+            <button id="scheduleAnAppointmentForCallbackModaldontKnow">Don't know</button>
+          </li>
+          <li>
+            <button id="scheduleAnAppointmentForCallbackModalneither">Neither</button>
+          </li>
+          <li>
+            <button id="back">Back</button>
+          </li>
+      </ul>
+    </div>
 
-    // Get the buttons
-    var btn = document.getElementById("myBtn");
-    // Get the button that opens the pickup modal
-    var pickupBtn = document.getElementById("pickup");
-    // Get the button that opens the no answer modal
-    var noPickupBtn = document.getElementById("noPickup");
-    // Get the back button
-    var backBtn = document.getElementById("back");
-    // Get the other back button
-    var backBtn2 = document.getElementById("back2");
+    <div id="dispo5107Modal" class="modal">
 
-	// Press 1 (value 49) to open disposition modal
-	$(document).keyup(function(event){
-		if(event.which == 49)
-			modal.style.display = "block";
-	});
-	
-    //*****Make the buttons fire events*****
-    // When the user clicks on the pickup button, open a new modal
-    pickupBtn.onclick = function() {
-        modal.style.display = "none";
-        pickupModal.style.display = "block";
-    }
-		
-    // When the user clicks on the no pickup button, open a new modal
-    noPickupBtn.onclick = function() {
-        modal.style.display = "none";
-        noPickupModal.style.display = "block";
-    }
+      <!-- Modal content -->
+      <div class="modal-content">
+        <p>Disposition code = 5107</p>
+        <p>APPOINTMENT WITH PROXY</p>
+        <p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p>
+        <ul style="list-style:none;">
+          <li>
+            <button id="supervisorAttentionNext" onClick="window.open('http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5107')">Next</button>
+          </li>
+          <li>
+            <button id="back">Back</button>
+          </li>
+        </ul>
+      </div>
 
-    // When the user clicks on the back button, return to previous modal
-    backBtn.onclick = function() {
-        pickupModal.style.display = "none";
-        modal.style.display = "block";
-    }
-    backBtn2.onclick = function() {
-        noPickupModal.style.display = "none";
-        modal.style.display = "block";
-    }
+      <div id="dispo5100Modal" class="modal">
 
-    // When the user clicks on a button with the pickup class, fire a new URL
-    $(".pickupClass").click(function() {
-        window.open("http://www.google.com")
-    });
+        <!-- Modal content -->
+        <div class="modal-content">
+          <p>Disposition code = 5100</p>
+          <p>T. Appointment</p>
+          <p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p>
+          <ul style="list-style:none;">
+            <li>
+              <button id="supervisorAttentionNext" onClick="window.open('http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5100')">Next</button>
+            </li>
+            <li>
+              <button id="back">Back</button>
+            </li>
+          </ul>
+        </div>
 
-    // When the user clicks a button with no pickup class, fire a new URL
-    // When the user clicks on a button with the pickup class, fire a new URL
-    $(".noPickupClass").click(function() {
-        window.open("http://www.wikipedia.org")
-    });
-});
+      </div>
