@@ -1,58 +1,324 @@
-$('<button id="myBtn">Open Modal</button><div id="myModal" class="modal"><div class="modal-content"><p>INTERVIEWER: You are now ready to answer questions to assign a disposition code. If you continue past this screen, you will select the outcome of this call attempt.</p><ul style="list-style:none;"><li><button id="supervisorAttention">Supervisor attention*</button></li><li><button id="scheduleAnAppointmentForCallback">Schedule an apppointment for callback</button></li><li><button id="scheduledAnInPersonInterview">Scheduled an in-person interview</button></li><li><button id="spokeWithAPerson">Spoke with a person</button></li><li><button id="didNotSpeakWithAPerson">Did not speak with a perseon</button></li><li><button id="receivedAlternateNumberForSP">Received alternate number for SP</button></li><li><button id="selectedPersonTransferedToANursingHome">Selected person transfered to a nursing home</button></li><li><button id="selectedPersonDead">Selected person dead</button></li></ul></div></div>').appendTo(body);
-$('<div id="supervisorAttentionModal" class="modal"><div class="modal-content"><p>Disposition code = 5700</p><p>SUPERVISOR ATTENTION</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="supervisorAttentionNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5700\')">Next</button></li><li><button id="dispo5700back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="scheduleAnAppointmentForCallbackModal" class="modal"><div class="modal-content"><p>Is the appointment with the proxy, or the SP?</p><ul style="list-style:none;"><li><li><button id="scheduleAnAppointmentForCallbackModalproxy">Proxy</button></li><li><button id="scheduleAnAppointmentForCallbackModalSP">SP</button></li><li><button id="scheduleAnAppointmentForCallbackModaldontKnow">Dont know</button></li><li><button id="scheduleAnAppointmentForCallbackModalNeither">Neither</button></li><li><button id="scheduleAnAppointmentForCallbackBack">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo5107Modal" class="modal"><div class="modal-content"><p>Disposition code = 5107</p><p>APPOINTMENT WITH PROXY</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="supervisorAttentionNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5107\')">Next</button></li><li><button id="dispo5107back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo5100Modal" class="modal"><div class="modal-content"><p>Disposition code = 5100</p><p>T. Appointment</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="supervisorAttentionNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5100\')">Next</button></li><li><button id="dispo5100back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="scheduledAnInPersonInterviewModal" class="modal"><div class="modal-content"><p>Disposition code = 9100</p><p>IN-PERSON INTERVIEW</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="dispo9100Next" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=9100\')">Next</button></li><li><button id="dispo9100back">Back</button></li></ul></div></div><div id="spokeWithAPersonModal" class="modal"><div class="modal-content"><p>INTERVIEWER: You indicated that you spoke with a person before the interview was terminated. Please select the appropriate response below to indicate how the interview ended. </p><ul style="list-style:none;"><li><li><button id="spokeWithAPersonModalRefusal">*A refusal/hang up/termination</button></li><li><button id="spokeWithAPersonModalFinalRefusal">*Final refusal/hang up/termination</button></li><li><button id="spokeWithAPersonLanguageProblem">Language problem</button></li><li><button id="spokeWithAPersonPhysicalOrMentalImpairment">Physical or mental impairment</button></li><li><button id="spokeWithAPersonBusinessOnly">Business only</button></li><li><button id="spokeWithAPersonReachedDifferentNumber">Number reached different than number dialed</button></li><li><button id="spokeWithAPersonPhoneNumberNotInPa">Phone number not in PA</button></li><li><button id="spokeWithAPersonLocationDoesNotAllowInterview">Respondent location does not allow interview</button></li><li><button id="spokeWithAPersonCallDropped">Call dropped</button></li><li><button id="spokeWithAPersonModalback">Back</button></li></ul></div></div><div id="softRefusalModal" class="modal"><div class="modal-content"><p>Did the Selected Person refuse?</p><ul style="list-style:none;"><li><button id="softRefuseYes">Yes</button></li><li><button id="softRefuseNo">No</button></li><li><button id="softRefuseDontKnow">Dont know</button></li><li><button id="softRefusalModalback">Back</button></li></ul></div></div><div id="hardRefusalModal" class="modal"><div class="modal-content"><p>Did the Selected Person refuse?</p><ul style="list-style:none;"><li><button id="hardRefuseYes">Yes</button></li><li><button id="hardRefuseNo">No</button></li><li><button id="hardRefuseDontKnow">Dont know</button></li><li><button id="hardRefusalModalback">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo5112Modal" class="modal"><div class="modal-content"><p>Disposition code = 5112</p><p>T. Refusal by selected respondent</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="softRefuseYesNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5112\')">Next</button></li><li><button id="dispo5112back">Back</button></li></ul></div></div><div id="softProxyRefusalModal" class="modal"><div class="modal-content"><p>Did a proxy refuse to be interviewed on behalf of the selected person?</p><ul style="list-style:none;"><li><button id="softProxyRefuseYes">Yes</button></li><li><button id="softProxyRefuseNo">No</button></li><li><button id="softProxyRefusalBack">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo5117Modal" class="modal"><div class="modal-content"><p>Disposition code = 5117</p><p>T. Refusal by proxy</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="softRefuseYesNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5117\')">Next</button></li><li><button id="dispo5117back">Back</button></li></ul></div></div>').appendTo(body)
-$('<div id="dispo5111Modal" class="modal"><div class="modal-content"><p>Disposition code = 5111</p><p>T. Refusal not by selected person</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="softProxyRefuseNoNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5111\')">Next</button></li><li><button id="dispo5111back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo5050Modal" class="modal"><div class="modal-content"><p>Disposition code = 5050</p><p>T. Refusal - Unknown who refused</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="unknownWhoRefusedNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5050\')">Next</button></li><li><button id="dispo5050back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo2117Modal" class="modal"><div class="modal-content"><p>Disposition code = 2117</p><p>Proxy refused to be interviewed on selected persons behalf.</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="selectedRespondentProxyHardNotRefusedNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=2117\')">Next</button></li><li><button id="dispo2117back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo2112Modal" class="modal"><div class="modal-content"><p>Disposition code = 2112</p><p>T. Refusal - Selected respondent refused</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="selectedRespondentHardRefusedNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=2112\')">Next</button></li><li><button id="dispo2112back">Back</button></li></ul></div></div><div id="hardRefusalProxyModal" class="modal"><div class="modal-content"><p>Did a proxy refuse to be interviewed on behalf of the selected person?</p><ul style="list-style:none;"><li><button id="hardRefuseProxyYes">Yes</button></li><li><button id="hardRefuseProxyNo">No</button></li><li><button id="hardRefusalProxyModalback">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo2111Modal" class="modal"><div class="modal-content"><p>Disposition code = 2111</p><p>T. Refusal - someone OTHER THAN selected respondent refused on behalf of selected respondent</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="selectedRespondentProxyHardRefusedNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=2111\')">Next</button></li><li><button id="dispo2111back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo2110Modal" class="modal"><div class="modal-content"><p>Disposition code = 2110</p><p>T. Refusal - refusal, unknown who refused</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="selectedRespondentProxyHardRefusedDontKnowNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=2110\')">Next</button></li><li><button id="dispo2110back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo5330Modal" class="modal"><div class="modal-content"><p>Disposition code = 5330</p><p>T. Language barrier</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="spokeWithAPersonLanguageProblemNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5330\')">Next</button></li><li><button id="dispo5330back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo5320Modal" class="modal"><div class="modal-content"><p>Disposition code = 5320</p><p>T. Physical/Mental impairment</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="spokeWithAPersonPhysical/MentalImpairment" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5320\')">Next</button></li><li><button id="dispo5320back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo4500Modal" class="modal"><div class="modal-content"><p>Disposition code = 4500</p><p>T. Physical/Mental impairment</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="spokeWithAPersonBusinessOnlyNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=4500\')">Next</button></li><li><button id="dispo4500back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo4300Modal" class="modal"><div class="modal-content"><p>Disposition code = 4300</p><p>FINAL nonworking number</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="finalNonworkingNumberNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=4300\')">Next</button></li><li><button id="dispo4300back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo4700Modal" class="modal"><div class="modal-content"><p>Disposition code = 4700</p><p>No eligible respondent</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="noEligibleRespondent" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=4700\')">Next</button></li><li><button id="dispo4700back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo5560Modal" class="modal"><div class="modal-content"><p>Disposition code = 5560</p><p>Location does not allow for interview</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="spokeWithAPersonLocationDoesNotAllowInterviewNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5560\')">Next</button></li><li><button id="dispo5560back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo5121Modal" class="modal"><div class="modal-content"><p>Disposition code = 5121</p><p>T. Call dropped</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="spokeWithAPersonCallDroppedNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5121\')">Next</button></li><li><button id="dispo5121back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="didNotSpeakWithAPersonModal" class="modal"><div class="modal-content"><p>INTERVIEWER: You indicated that you did NOT speak with a person before the interview was terminated. Please select the response below to indicate how the interview was ended.</p><ul style="list-style:none;"><li><button id="answeringMachine">Answering machine</button></li><li><button id="telecomBarrier">Telecommunications barrier (Call forward, call block, etc...)</button></li><li><button id="possibleNonworkingNumber">Possible non-working number</button></li><li><button id="noAnswerToNormalRing">No answer to normal telephone ring</button></li><li><button id="normalBusySignal">Normal busy signal</button></li><li><button id="fax/data/modemSound">Fax/data/modem sound</button></li><li><button id="techBarrier">Technological barrier (fast busy, circuits busy, beeping, etc...)</button></li><li><button id="nullAttempt">Null attempt</button></li><li><button id="finalTritone">FINAL tritone or message indicating non-working number</button></li><li><button id="didNotSpeakWithAPersonModalBack">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo5140Modal" class="modal"><div class="modal-content"><p>Disposition code = 5140</p><p>T. Answering device</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="answeringMachineNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5140\')">Next</button></li><li><button id="dispo5140back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo5150Modal" class="modal"><div class="modal-content"><p>Disposition code = 5150</p><p>T. Telecommunication barrier</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="telecommBarrierNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5150\')">Next</button></li><li><button id="dispo5150back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo5300Modal" class="modal"><div class="modal-content"><p>Disposition code = 5300</p><p>T. Possible nonworking number</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="possNonworkingNumberNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5300\')">Next</button></li><li><button id="dispo5300back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo5130Modal" class="modal"><div class="modal-content"><p>Disposition code = 5130</p><p>T. No answer to normal telephone ring</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="possNonworkingNumberNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5130\')">Next</button></li><li><button id="dispo5130back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo5550Modal" class="modal"><div class="modal-content"><p>Disposition code = 5550</p><p>T. Busy signal</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="busyNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5550\')">Next</button></li><li><button id="dispo5550back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo5200Modal" class="modal"><div class="modal-content"><p>Disposition code = 5200</p><p>T. Fax/Data/Modem</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="faxdatamodemNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5200\')">Next</button></li><li><button id="dispo5200back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo5400Modal" class="modal"><div class="modal-content"><p>Disposition code = 5400</p><p>T. Technological barrier</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="techBarrierNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5400\')">Next</button></li><li><button id="dispo5400back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo5900Modal" class="modal"><div class="modal-content"><p>Disposition code = 5900</p><p>T. NULL ATTEMPT</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="nullNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5900\')">Next</button></li><li><button id="dispo5900back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo5105Modal" class="modal"><div class="modal-content"><p>Disposition code = 5105</p><p>APPOINTMENT USING ALTERNATIVE NUMBER</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="altApptNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5105\')">Next</button></li><li><button id="dispo5105back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo4505Modal" class="modal"><div class="modal-content"><p>Disposition code = 4505</p><p>Selected person transfered to nursing home</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="nursingHometNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=4505\')">Next</button></li><li><button id="dispo4505back">Back</button></li></ul></div></div>').appendTo(body);
-$('<div id="dispo2310Modal" class="modal"><div class="modal-content"><p>Disposition code = 2310</p><p>Respondent dead</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="deadNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=2310\')">Next</button></li><li><button id="dispo2310back">Back</button></li></ul></div></div>').appendTo(body);
+Qualtrics.SurveyEngine.addOnload(function() {
+	$("<html>").keydown(function( event ) {
+		 if ( event.which == 120 ) {
+			$('<button id="myBtn">Open Modal</button><div id="myModal" class="modal"><div class="modal-content"><p>INTERVIEWER: You are now ready to answer questions to assign a disposition code. If you continue past this screen, you will select the outcome of this call attempt.</p><ul style="list-style:none;"><li><button id="supervisorAttention">Supervisor attention*</button></li><li><button id="scheduleAnAppointmentForCallback">Schedule an apppointment for callback</button></li><li><button id="scheduledAnInPersonInterview">Scheduled an in-person interview</button></li><li><button id="spokeWithAPerson">Spoke with a person</button></li><li><button id="didNotSpeakWithAPerson">Did not speak with a perseon</button></li><li><button id="receivedAlternateNumberForSP">Received alternate number for SP</button></li><li><button id="selectedPersonTransferedToANursingHome">Selected person transfered to a nursing home</button></li><li><button id="selectedPersonDead">Selected person dead</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="supervisorAttentionModal" class="modal"><div class="modal-content"><p>Disposition code = 5700</p><p>SUPERVISOR ATTENTION</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="supervisorAttentionNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5700\')">Next</button></li><li><button id="dispo5700back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="scheduleAnAppointmentForCallbackModal" class="modal"><div class="modal-content"><p>Is the appointment with the proxy, or the SP?</p><ul style="list-style:none;"><li><li><button id="scheduleAnAppointmentForCallbackModalproxy">Proxy</button></li><li><button id="scheduleAnAppointmentForCallbackModalSP">SP</button></li><li><button id="scheduleAnAppointmentForCallbackModaldontKnow">Dont know</button></li><li><button id="scheduleAnAppointmentForCallbackModalNeither">Neither</button></li><li><button id="scheduleAnAppointmentForCallbackBack">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo5107Modal" class="modal"><div class="modal-content"><p>Disposition code = 5107</p><p>APPOINTMENT WITH PROXY</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="supervisorAttentionNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5107\')">Next</button></li><li><button id="dispo5107back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo5100Modal" class="modal"><div class="modal-content"><p>Disposition code = 5100</p><p>T. Appointment</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="supervisorAttentionNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5100\')">Next</button></li><li><button id="dispo5100back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="scheduledAnInPersonInterviewModal" class="modal"><div class="modal-content"><p>Disposition code = 9100</p><p>IN-PERSON INTERVIEW</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="dispo9100Next" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=9100\')">Next</button></li><li><button id="dispo9100back">Back</button></li></ul></div></div><div id="spokeWithAPersonModal" class="modal"><div class="modal-content"><p>INTERVIEWER: You indicated that you spoke with a person before the interview was terminated. Please select the appropriate response below to indicate how the interview ended. </p><ul style="list-style:none;"><li><li><button id="spokeWithAPersonModalRefusal">*A refusal/hang up/termination</button></li><li><button id="spokeWithAPersonModalFinalRefusal">*Final refusal/hang up/termination</button></li><li><button id="spokeWithAPersonLanguageProblem">Language problem</button></li><li><button id="spokeWithAPersonPhysicalOrMentalImpairment">Physical or mental impairment</button></li><li><button id="spokeWithAPersonBusinessOnly">Business only</button></li><li><button id="spokeWithAPersonReachedDifferentNumber">Number reached different than number dialed</button></li><li><button id="spokeWithAPersonPhoneNumberNotInPa">Phone number not in PA</button></li><li><button id="spokeWithAPersonLocationDoesNotAllowInterview">Respondent location does not allow interview</button></li><li><button id="spokeWithAPersonCallDropped">Call dropped</button></li><li><button id="spokeWithAPersonModalback">Back</button></li></ul></div></div><div id="softRefusalModal" class="modal"><div class="modal-content"><p>Did the Selected Person refuse?</p><ul style="list-style:none;"><li><button id="softRefuseYes">Yes</button></li><li><button id="softRefuseNo">No</button></li><li><button id="softRefuseDontKnow">Dont know</button></li><li><button id="softRefusalModalback">Back</button></li></ul></div></div><div id="hardRefusalModal" class="modal"><div class="modal-content"><p>Did the Selected Person refuse?</p><ul style="list-style:none;"><li><button id="hardRefuseYes">Yes</button></li><li><button id="hardRefuseNo">No</button></li><li><button id="hardRefuseDontKnow">Dont know</button></li><li><button id="hardRefusalModalback">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo5112Modal" class="modal"><div class="modal-content"><p>Disposition code = 5112</p><p>T. Refusal by selected respondent</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="softRefuseYesNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5112\')">Next</button></li><li><button id="dispo5112back">Back</button></li></ul></div></div><div id="softProxyRefusalModal" class="modal"><div class="modal-content"><p>Did a proxy refuse to be interviewed on behalf of the selected person?</p><ul style="list-style:none;"><li><button id="softProxyRefuseYes">Yes</button></li><li><button id="softProxyRefuseNo">No</button></li><li><button id="softProxyRefusalBack">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo5117Modal" class="modal"><div class="modal-content"><p>Disposition code = 5117</p><p>T. Refusal by proxy</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="softRefuseYesNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5117\')">Next</button></li><li><button id="dispo5117back">Back</button></li></ul></div></div>').appendTo("<body>")
+			$('<div id="dispo5111Modal" class="modal"><div class="modal-content"><p>Disposition code = 5111</p><p>T. Refusal not by selected person</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="softProxyRefuseNoNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5111\')">Next</button></li><li><button id="dispo5111back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo5050Modal" class="modal"><div class="modal-content"><p>Disposition code = 5050</p><p>T. Refusal - Unknown who refused</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="unknownWhoRefusedNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5050\')">Next</button></li><li><button id="dispo5050back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo2117Modal" class="modal"><div class="modal-content"><p>Disposition code = 2117</p><p>Proxy refused to be interviewed on selected persons behalf.</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="selectedRespondentProxyHardNotRefusedNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=2117\')">Next</button></li><li><button id="dispo2117back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo2112Modal" class="modal"><div class="modal-content"><p>Disposition code = 2112</p><p>T. Refusal - Selected respondent refused</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="selectedRespondentHardRefusedNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=2112\')">Next</button></li><li><button id="dispo2112back">Back</button></li></ul></div></div><div id="hardRefusalProxyModal" class="modal"><div class="modal-content"><p>Did a proxy refuse to be interviewed on behalf of the selected person?</p><ul style="list-style:none;"><li><button id="hardRefuseProxyYes">Yes</button></li><li><button id="hardRefuseProxyNo">No</button></li><li><button id="hardRefusalProxyModalback">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo2111Modal" class="modal"><div class="modal-content"><p>Disposition code = 2111</p><p>T. Refusal - someone OTHER THAN selected respondent refused on behalf of selected respondent</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="selectedRespondentProxyHardRefusedNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=2111\')">Next</button></li><li><button id="dispo2111back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo2110Modal" class="modal"><div class="modal-content"><p>Disposition code = 2110</p><p>T. Refusal - refusal, unknown who refused</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="selectedRespondentProxyHardRefusedDontKnowNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=2110\')">Next</button></li><li><button id="dispo2110back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo5330Modal" class="modal"><div class="modal-content"><p>Disposition code = 5330</p><p>T. Language barrier</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="spokeWithAPersonLanguageProblemNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5330\')">Next</button></li><li><button id="dispo5330back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo5320Modal" class="modal"><div class="modal-content"><p>Disposition code = 5320</p><p>T. Physical/Mental impairment</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="spokeWithAPersonPhysical/MentalImpairment" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5320\')">Next</button></li><li><button id="dispo5320back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo4500Modal" class="modal"><div class="modal-content"><p>Disposition code = 4500</p><p>T. Physical/Mental impairment</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="spokeWithAPersonBusinessOnlyNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=4500\')">Next</button></li><li><button id="dispo4500back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo4300Modal" class="modal"><div class="modal-content"><p>Disposition code = 4300</p><p>FINAL nonworking number</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="finalNonworkingNumberNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=4300\')">Next</button></li><li><button id="dispo4300back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo4700Modal" class="modal"><div class="modal-content"><p>Disposition code = 4700</p><p>No eligible respondent</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="noEligibleRespondent" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=4700\')">Next</button></li><li><button id="dispo4700back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo5560Modal" class="modal"><div class="modal-content"><p>Disposition code = 5560</p><p>Location does not allow for interview</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="spokeWithAPersonLocationDoesNotAllowInterviewNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5560\')">Next</button></li><li><button id="dispo5560back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo5121Modal" class="modal"><div class="modal-content"><p>Disposition code = 5121</p><p>T. Call dropped</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="spokeWithAPersonCallDroppedNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5121\')">Next</button></li><li><button id="dispo5121back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="didNotSpeakWithAPersonModal" class="modal"><div class="modal-content"><p>INTERVIEWER: You indicated that you did NOT speak with a person before the interview was terminated. Please select the response below to indicate how the interview was ended.</p><ul style="list-style:none;"><li><button id="answeringMachine">Answering machine</button></li><li><button id="telecomBarrier">Telecommunications barrier (Call forward, call block, etc...)</button></li><li><button id="possibleNonworkingNumber">Possible non-working number</button></li><li><button id="noAnswerToNormalRing">No answer to normal telephone ring</button></li><li><button id="normalBusySignal">Normal busy signal</button></li><li><button id="fax/data/modemSound">Fax/data/modem sound</button></li><li><button id="techBarrier">Technological barrier (fast busy, circuits busy, beeping, etc...)</button></li><li><button id="nullAttempt">Null attempt</button></li><li><button id="finalTritone">FINAL tritone or message indicating non-working number</button></li><li><button id="didNotSpeakWithAPersonModalBack">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo5140Modal" class="modal"><div class="modal-content"><p>Disposition code = 5140</p><p>T. Answering device</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="answeringMachineNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5140\')">Next</button></li><li><button id="dispo5140back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo5150Modal" class="modal"><div class="modal-content"><p>Disposition code = 5150</p><p>T. Telecommunication barrier</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="telecommBarrierNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5150\')">Next</button></li><li><button id="dispo5150back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo5300Modal" class="modal"><div class="modal-content"><p>Disposition code = 5300</p><p>T. Possible nonworking number</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="possNonworkingNumberNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5300\')">Next</button></li><li><button id="dispo5300back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo5130Modal" class="modal"><div class="modal-content"><p>Disposition code = 5130</p><p>T. No answer to normal telephone ring</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="possNonworkingNumberNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5130\')">Next</button></li><li><button id="dispo5130back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo5550Modal" class="modal"><div class="modal-content"><p>Disposition code = 5550</p><p>T. Busy signal</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="busyNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5550\')">Next</button></li><li><button id="dispo5550back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo5200Modal" class="modal"><div class="modal-content"><p>Disposition code = 5200</p><p>T. Fax/Data/Modem</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="faxdatamodemNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5200\')">Next</button></li><li><button id="dispo5200back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo5400Modal" class="modal"><div class="modal-content"><p>Disposition code = 5400</p><p>T. Technological barrier</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="techBarrierNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5400\')">Next</button></li><li><button id="dispo5400back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo5900Modal" class="modal"><div class="modal-content"><p>Disposition code = 5900</p><p>T. NULL ATTEMPT</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="nullNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5900\')">Next</button></li><li><button id="dispo5900back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo5105Modal" class="modal"><div class="modal-content"><p>Disposition code = 5105</p><p>APPOINTMENT USING ALTERNATIVE NUMBER</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="altApptNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=5105\')">Next</button></li><li><button id="dispo5105back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo4505Modal" class="modal"><div class="modal-content"><p>Disposition code = 4505</p><p>Selected person transfered to nursing home</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="nursingHometNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=4505\')">Next</button></li><li><button id="dispo4505back">Back</button></li></ul></div></div>').appendTo("<body>");
+			$('<div id="dispo2310Modal" class="modal"><div class="modal-content"><p>Disposition code = 2310</p><p>Respondent dead</p><p>HIT "NEXT" TO ASSIGN THIS DISPOSITION CODE</p><ul style="list-style:none;"><li><button id="deadNext" onClick="window.open(\'http://130.49.206.205:8090/ReturnToWincati/PassCode=${e://Field/PassCode}/PCA=${e://Field/PCA}/HOMEMAKER=${e://Field/HOMEMAKER}/CASEMANAGER=${e://Field/CASEMANAGER}/VALFU=${e://Field/VALFU}/IntVStatus=3/Dispo=2310\')">Next</button></li><li><button id="dispo2310back">Back</button></li></ul></div></div>').appendTo("<body>");
 
-$(".modal").css({
-    "display": "none",
-    "position": "fixed",
-    "z-index": "1",
-    "left": "0",
-    "top": "0",
-    "width": "100%",
-    "height": "100%",
-    "overflow": "auto",
-    "background-color": "rgb(0, 0, 0)",
-    "background-color": "rgba(0, 0, 0, 0.4)"
-});
+			$(".modal").css({
+			    "display": "none",
+			    "position": "fixed",
+			    "z-index": "1",
+			    "left": "0",
+			    "top": "0",
+			    "width": "100%",
+			    "height": "100%",
+			    "overflow": "auto",
+			    "background-color": "rgb(0, 0, 0)",
+			    "background-color": "rgba(0, 0, 0, 0.4)"
+			});
 
-$(".modal-content").css({
-    "background-color": "#fefefe",
-    "margin": "15% auto",
-    "padding": "20px",
-    "border": "1px solid #888",
-    "width": "80%"
-});
+			$(".modal-content").css({
+			    "background-color": "#fefefe",
+			    "margin": "15% auto",
+			    "padding": "20px",
+			    "border": "1px solid #888",
+			    "width": "80%"
+			});
 
-$("button").css({
-	"width" : "350px"
-});
+			$("button").css({
+				"width" : "350px"
+			});
+		}})});
+// Get the modals
+var modal = document.getElementById('myModal');
+
+// Get the buttons
+var btn = document.getElementById("myBtn");
+var supervisorAttentionButton = document.getElementById('supervisorAttention');
+var scheduleAnAppointmentForCallbackButton = document.getElementById('scheduleAnAppointmentForCallback');
+var scheduleAnAppointmentForCallbackModalproxyButton = document.getElementById('scheduleAnAppointmentForCallbackModalproxy');
+var scheduleAnAppointmentForCallbackModalSPButton = document.getElementById('scheduleAnAppointmentForCallbackModalSP');
+var scheduleAnAppointmentForCallbackModaldontKnowButton = document.getElementById('scheduleAnAppointmentForCallbackModaldontKnow')
+var scheduleAnAppointmentForCallbackModalNeitherButton = document.getElementById('scheduleAnAppointmentForCallbackModalNeither');
+var scheduledAnInPersonInterviewButton = document.getElementById('scheduledAnInPersonInterview');
+var spokeWithAPersonButton = document.getElementById('spokeWithAPerson');
+var softRefusalModalButton = document.getElementById('spokeWithAPersonModalRefusal');
+var softRefuseYesButton = document.getElementById('softRefuseYes');
+var softProxyRefusalModalButton = document.getElementById('softRefuseNo');
+var softProxyRefusalYesButton = document.getElementById('softProxyRefuseYes');
+var softProxyRefuseNoButton = document.getElementById('softProxyRefuseNo');
+var softRefuseDontKnowButton = document.getElementById('softRefuseDontKnow');
+var spokeWithAPersonModalFinalRefusalButton = document.getElementById('spokeWithAPersonModalFinalRefusal');
+var hardRefuseYesButton = document.getElementById('hardRefuseYes');
+var hardRefuseNoButton = document.getElementById('hardRefuseNo');
+var hardRefuseProxyNoButton = document.getElementById('hardRefuseProxyNo');
+var hardRefuseProxyYesButton = document.getElementById('hardRefuseProxyYes');
+var hardRefuseDontKnowButton = document.getElementById('hardRefuseDontKnow');
+var spokeWithAPersonLanguageProblemButton = document.getElementById('spokeWithAPersonLanguageProblem');
+var spokeWithAPersonPhysicalOrMentalImpairmentButton = document.getElementById('spokeWithAPersonPhysicalOrMentalImpairment')
+var spokeWithAPersonBusinessOnlyButton = document.getElementById('spokeWithAPersonBusinessOnly');
+var spokeWithAPersonReachedDifferentNumberButton = document.getElementById('spokeWithAPersonReachedDifferentNumber');
+var spokeWithAPersonNumberNotInPAButton = document.getElementById('spokeWithAPersonPhoneNumberNotInPa');
+var spokeWithAPersonLocationDoesNotAllowInterviewButton = document.getElementById('spokeWithAPersonLocationDoesNotAllowInterview');
+var spokeWithAPersonCallDroppedButton = document.getElementById('spokeWithAPersonCallDropped');
+var didNotSpeakWithAPersonButton = document.getElementById('didNotSpeakWithAPerson');
+var answeringMachineButton = document.getElementById('answeringMachine');
+var telecommBarrierButton = document.getElementById('telecomBarrier');
+var possibleNonworkingNumberButton = document.getElementById('possibleNonworkingNumber');
+var noAnswerButton = document.getElementById('noAnswerToNormalRing');
+var busyButton = document.getElementById('normalBusySignal');
+var faxdatamodemButton = document.getElementById('fax/data/modemSound');
+var techBarrierButton = document.getElementById('techBarrier');
+var nullAttemptButton = document.getElementById('nullAttempt');
+var finalTritoneButton = document.getElementById('finalTritone');
+var altApptButton = document.getElementById('receivedAlternateNumberForSP');
+var nursingHomeButton = document.getElementById('selectedPersonTransferedToANursingHome');
+var deathButton = document.getElementById('selectedPersonDead');
+var dispo5700backButton = document.getElementById('dispo5700back');
+var scheduleAnApppointmentForCallbackBackButton = document.getElementById('scheduleAnApppointmentForCallbackBack');
+var dispo5107backButton = document.getElementById('dispo5107back');
+var dispo5100backButton = document.getElementById('dispo5100back');
+var scheduleAnAppointmentForCallbackBackButton = document.getElementById('scheduleAnAppointmentForCallbackBackButton');
+var dispo9100backButton =  document.getElementById('dispo9100back');
+var spokeWithAPersonModalbackButton = document.getElementById('spokeWithAPersonModalback');
+var softRefusalModalBackButton = document.getElementById('softRefusalModalback');
+var hardRefusalModalbackButton = document.getElementById('hardRefusalModalback');
+
+hardRefusalModalbackButton.onclick = function() {
+  hardRefusalModal.style.display = "none";
+  spokeWithAPersonModal.style.display = "block";
+}
+
+softRefusalModalBackButton.onclick = function() {
+  softRefusalModal.style.display = "none";
+  spokeWithAPersonModal.style.display = "block";
+}
+
+spokeWithAPersonModalbackButton.onclick = function() {
+  spokeWithAPersonModal.style.display = "none";
+  modal.style.display = "block";
+}
+
+dispo9100backButton.onclick = function() {
+  scheduledAnInPersonInterviewModal.style.display = "none";
+  modal.style.display = "block";
+}
+
+scheduleAnAppointmentForCallbackBackButton.onclick = function() {
+  scheduleAnAppointmentForCallbackModal.style.display = "none";
+  mdoal.style.display = "block";
+}
+
+dispo5100backButton.onclick = function() {
+  dispo5100Modal.style.display = "none";
+  scheduleAnAppointmentForCallbackModal.style.display = "block";
+}
+
+dispo5107backButton.onclick = function() {
+  dispo5107Modal.style.display = "none";
+  scheduleAnAppointmentForCallbackModal.style.display = "block";
+}
+
+scheduleAnAppointmentForCallbackBackButton.onclick = function() {
+  scheduleAnAppointmentForCallbackModal.style.display = "none";
+  mdoal.style.display = "block";
+}
+
+dispo5700backButton.onclick = function() {
+  supervisorAttentionModal.style.display = "none";
+  modal.style.display = "block";
+}
+//*****Make the buttons fire events*****
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+supervisorAttentionButton.onclick = function() {
+  modal.style.display = "none";
+  supervisorAttentionModal.style.display = "block";
+}
+scheduleAnAppointmentForCallbackButton.onclick = function() {
+  modal.style.display = "none";
+  scheduleAnAppointmentForCallbackModal.style.display = "block";
+}
+scheduleAnAppointmentForCallbackModalproxyButton.onclick = function() {
+  scheduleAnAppointmentForCallbackModal.style.display = "none";
+  dispo5107Modal.style.display = "block";
+}
+scheduleAnAppointmentForCallbackModalSPButton.onclick = function() {
+  scheduleAnAppointmentForCallbackModal.style.display = "none";
+  dispo5100Modal.style.display = "block";
+}
+scheduleAnAppointmentForCallbackModaldontKnowButton.onclick = function() {
+  scheduleAnAppointmentForCallbackModal.style.display = "none";
+  dispo5100Modal.style.display = "block";
+}
+scheduleAnAppointmentForCallbackModalNeitherButton.onclick = function() {
+  scheduleAnAppointmentForCallbackModal.style.display = "none";
+  dispo5100Modal.style.display = "block";
+}
+scheduledAnInPersonInterviewButton.onclick = function() {
+  modal.style.display = "none";
+  scheduledAnInPersonInterviewModal.style.display = "block";
+}
+spokeWithAPersonButton.onclick = function() {
+  modal.style.display = "none";
+  spokeWithAPersonModal.style.display = "block";
+}
+softRefusalModalButton.onclick = function() {
+
+  softRefusalModal.style.display = "block";
+}
+softRefuseYesButton.onclick = function() {
+  dispo5112Modal.style.display = "block";
+}
+softProxyRefusalModalButton.onclick = function() {
+  softRefusalModal.style.display = "none";
+  softProxyRefusalModal.style.display = "block";
+}
+softProxyRefusalYesButton.onclick = function() {
+  softProxyRefusalModal.style.display = "none";
+  dispo5117Modal.style.display = "block";
+}
+softProxyRefuseNoButton.onclick = function() {
+  softProxyRefusalModal.style.disdplay = "none";
+  dispo5111Modal.style.display = "block";
+}
+softRefuseDontKnowButton.onclick = function() {
+  softRefusalModal.style.display = "none";
+  dispo5050Modal.style.display = "block";
+}
+spokeWithAPersonModalFinalRefusalButton.onclick = function() {
+  spokeWithAPersonModal.style.display = "none";
+  hardRefusalModal.style.display = "block";
+}
+hardRefuseYesButton.onclick = function() {
+  hardRefusalModal.style.display = "none";
+  dispo2112Modal.style.display = "block";
+}
+hardRefuseNoButton.onclick = function() {
+  hardRefusalModal.style.display = "none";
+  hardRefusalProxyModal.style.display = "block";
+}
+hardRefuseProxyNo.onclick = function() {
+  hardRefusalProxyModal.style.display = "none";
+  dispo2111Modal.style.display = "block";
+}
+hardRefuseProxyYesButton.onclick = function() {
+  hardRefusalProxyModal.style.display = "none";
+  dispo2117Modal.style.display = "block";
+}
+hardRefuseDontKnow.onclick = function() {
+  hardRefusalModal.style.display = "none";
+  dispo2110Modal.style.display = "block";
+}
+spokeWithAPersonLanguageProblemButton.onclick = function() {
+  spokeWithAPersonModal.style.display = "none";
+  dispo5330Modal.style.display = "block";
+}
+spokeWithAPersonPhysicalOrMentalImpairment.onclick = function() {
+  spokeWithAPersonModal.style.display = "none";
+  dispo5320Modal.style.display = "block";
+}
+spokeWithAPersonBusinessOnlyButton.onclick = function() {
+  spokeWithAPersonModal.style.display = "none";
+  dispo4500Modal.style.display = "block";
+}
+spokeWithAPersonReachedDifferentNumberButton.onclick = function() {
+  spokeWithAPersonModal.style.display = "none";
+  dispo4300Modal.style.display = "block";
+}
+spokeWithAPersonNumberNotInPAButton.onclick = function() {
+  spokeWithAPersonModal.style.display = "none";
+  dispo4700Modal.style.display = "block";
+}
+spokeWithAPersonLocationDoesNotAllowInterviewButton.onclick = function() {
+  spokeWithAPersonModal.style.display = "none";
+  dispo5560Modal.style.display = "block";
+}
+spokeWithAPersonCallDroppedButton.onclick = function() {
+  spokeWithAPersonModal.style.display = "none";
+  dispo5121Modal.style.display = "block";
+}
+didNotSpeakWithAPersonButton.onclick = function() {
+  modal.style.display = "none";
+  didNotSpeakWithAPersonModal.style.display = "block";
+}
+answeringMachineButton.onclick = function() {
+  didNotSpeakWithAPersonModal.style.display = "none";
+  dispo5140Modal.style.display = "block";
+}
+telecommBarrierButton.onclick = function() {
+  didNotSpeakWithAPersonModal.style.display = "none";
+  dispo5150Modal.style.display = "block";
+}
+possibleNonworkingNumberButton.onclick = function() {
+  didNotSpeakWithAPersonModal.style.display = "none";
+  dispo5300Modal.style.display = "block";
+}
+noAnswerButton.onclick = function() {
+  didNotSpeakWithAPersonModal.style.display = "none";
+  dispo5130Modal.style.display = "block";
+}
+busyButton.onclick = function() {
+  didNotSpeakWithAPersonModal.style.display = "none";
+  dispo5550Modal.style.display = "block";
+}
+faxdatamodemButton.onclick = function() {
+  didNotSpeakWithAPersonModal.style.display = "none";
+  dispo5200Modal.style.display = "block";
+}
+techBarrierButton.onclick = function() {
+  didNotSpeakWithAPersonModal.style.display = "none";
+  dispo5400Modal.style.display = "block";
+}
+nullAttemptButton.onclick = function() {
+  didNotSpeakWithAPersonModal.style.display = "none";
+  dispo5900Modal.style.display = "block";
+}
+finalTritoneButton.onclick = function() {
+  didNotSpeakWithAPersonModal.style.display = "none";
+  dispo4300Modal.style.display = "block";
+}
+altApptButton.onclick = function() {
+  modal.style.display = "none";
+  dispo5105Modal.style.display = "block";
+}
+nursingHomeButton.onclick = function() {
+  modal.style.display = "none";
+  dispo4505Modal.style.display = "block";
+}
+deathButton.onclick = function() {
+  modal.style.display = "none";
+  dispo2310Modal.style.display = "block";
+}
